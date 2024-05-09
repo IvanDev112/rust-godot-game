@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://hm6y7gvau1yl"]
+[gd_scene load_steps=2 format=3 uid="uid://hm6y7gvau1yl"]
 
-[node name="Demo" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://dtvwcr4u30xdj" path="res://icon.svg" id="1_8yuu4"]
+
+[node name="Demo" type="Demo"]
+texture = ExtResource("1_8yuu4")

@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://pgfssg2wpy3s"]
+
+[ext_resource type="Texture2D" uid="uid://bra7rmyviqdc3" path="res://assets/sprites/characters.png" id="1_1doq3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8nqi"]
+atlas = ExtResource("1_1doq3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgdti"]
+atlas = ExtResource("1_1doq3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwcj2"]
+atlas = ExtResource("1_1doq3")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7m14"]
+atlas = ExtResource("1_1doq3")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkvqc"]
+atlas = ExtResource("1_1doq3")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr4au"]
+atlas = ExtResource("1_1doq3")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8puc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8nqi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgdti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwcj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7m14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkvqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr4au")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4su7a"]
+size = Vector2(13, 21)
+
+[node name="Player" type="Player"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_8puc7")
+animation = &"run"
+autoplay = "idle"
+frame_progress = 0.6144
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 5.5)
+shape = SubResource("RectangleShape2D_4su7a")

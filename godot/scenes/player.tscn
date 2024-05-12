@@ -58,9 +58,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4su7a"]
-size = Vector2(13, 21)
+size = Vector2(24, 42)
 
 [node name="Player" type="Player"]
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
@@ -70,5 +71,5 @@ autoplay = "idle"
 frame_progress = 0.6144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 5.5)
+position = Vector2(2, 9)
 shape = SubResource("RectangleShape2D_4su7a")
